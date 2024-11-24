@@ -396,7 +396,7 @@ with col1:
 
             st.rerun()  # Trigger a rerun to refresh the image
 
-    st.text_input("Enter your input for Mermaid diagram generation:", key="user_input", on_change=process_user_input)
+    st.text_input("Enter your input for diagram generation:", key="user_input", on_change=process_user_input)
     if st.button("Clear Chat"):
         st.session_state.chat_history = []  # Clear the chat history
         st.session_state.chat = genai.GenerativeModel(
