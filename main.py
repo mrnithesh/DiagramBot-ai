@@ -358,7 +358,7 @@ if 'chat_history' not in st.session_state:
 
 if 'chat' not in st.session_state:
     st.session_state.chat = genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
+        model_name="gemini-flash-latest",
         generation_config=generation_config
     ).start_chat(history=[])
     initial_response = convo(system_instruction, st.session_state.chat)
@@ -400,7 +400,7 @@ with col1:
     if st.button("Clear Chat"):
         st.session_state.chat_history = []  # Clear the chat history
         st.session_state.chat = genai.GenerativeModel(
-            model_name="gemini-1.5-pro",
+            model_name="gemini-flash-latest",
             generation_config=generation_config
         ).start_chat(history=[])
         st.rerun()  # Rerun the app to reflect the changes
